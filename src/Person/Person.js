@@ -1,10 +1,10 @@
 import React from 'react';
 
-const person = (props) => {
+export const person = (props) => {
     return (
         <div>
             <p>I'm {props.name} and I'm {props.age} years old!</p>
-            <p>{console.log('children: ', props.children)}</p>
+            <p>{props.children}</p>
         </div>
     )
 }
