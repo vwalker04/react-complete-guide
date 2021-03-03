@@ -22,6 +22,16 @@ class App extends Component {
         });
     }
 
+    changeName = (event) => {
+        this.setState({
+            persons: [
+                {name: "Vaughn", age: 1},
+                {name: event.target.value, age: 2},
+                {name: "Ro", age: 3},
+            ]
+        });
+    }
+
     render() {
         return (
             <div className="App">
@@ -37,7 +47,8 @@ class App extends Component {
                     name={this.state.persons[1].name}
                     age={this.state.persons[1].age}
                     // Need to bind this in class context. This is more efficient as it does not need to go through an extra function
-                    click={this.switchNameHandler.bind(this, "VMoney")}/>
+                    click={this.switchNameHandler.bind(this, "VMoney")}
+                    change={this.changeName}/>
                 <Person
                     name={this.state.persons[2].name}
                     age={this.state.persons[2].age}/>
